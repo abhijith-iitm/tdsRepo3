@@ -130,6 +130,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def home():
+    return "Home Page"
 
 @app.get("/api?name=X&name=Y")
 async def get_marks(name: str = None):
