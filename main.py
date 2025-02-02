@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from mangum import Mangum 
 
 app = FastAPI()
 
@@ -142,8 +143,10 @@ async def get_marks(name: list[str] = Query(...)):  # '...' makes it required
 
 
 
-# For local testing (optional)
-if __name__ == "__main__":
-    import uvicorn
+# # For local testing (optional)
+# if __name__ == "__main__":
+#     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)  # Or any port you prefer
+#     uvicorn.run(app, host="0.0.0.0", port=8000)  # Or any port you prefer
+
+handler = Mangum(app)
