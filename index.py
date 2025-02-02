@@ -124,7 +124,7 @@ app.add_middleware(
 def home():
     return "Home Page"
 
-@app.get("/api?name=X&name=Y")
+@app.get("/api")
 async def get_marks(name: list[str] = Query(...)):  # '...' makes it required
     results = {}
     for n in name:
