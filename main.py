@@ -113,13 +113,13 @@ marks_data = {
 
 origins = ["*"]  # Allow all origins (for demonstration - restrict in production)
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["GET"],  # Only allow GET requests
-    allow_headers=["*"],
-)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=origins,
+#     allow_credentials=True,
+#     allow_methods=["GET"],  # Only allow GET requests
+#     allow_headers=["*"],
+# )
 
 @app.get("/")
 def home():
